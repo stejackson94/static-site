@@ -1,1 +1,1 @@
-# static-site
+# static-site for my CV
