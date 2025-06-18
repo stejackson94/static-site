@@ -1,0 +1,16 @@
+site_name: Stephen Jacksons Website
+site_url: https://stejackson.com
+site_author: Stephen Jackson
+
+nav: 
+  - Home: index.md
+  - CV: CV.md
+  - Site Build: SiteBuild.md
+
+theme:
+  name: null
+  custom_dir: 'cinder'
+  disable_footer: true
+
+markdown_extensions:
+  - attr_list

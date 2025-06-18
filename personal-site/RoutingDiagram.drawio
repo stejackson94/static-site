@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net" modified="2024-03-23T18:49:10.835Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="iTLe7k3LZS7YCRSUO8C6" version="24.1.0" type="device">
+  <diagram name="Page-1" id="fKqLV18iu5lFmGmaRMh4">
+    <mxGraphModel dx="1242" dy="722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-3" value="stejackson.com" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/nuove/128x128/filesystems/www.png" vertex="1" parent="1">
+          <mxGeometry x="210" y="266" width="128" height="128" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-5" value="Site Visitor" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.user;" vertex="1" parent="1">
+          <mxGeometry x="70" y="320" width="47.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-6" value="Route 53" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.route_53;fillColor=#F58536;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="450" y="284.5" width="70.5" height="85.5" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-7" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Namecheap_Logo.svg/2560px-Namecheap_Logo.svg.png;" vertex="1" parent="1">
+          <mxGeometry x="390" y="500" width="210" height="38.15" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-10" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="344.5" as="sourcePoint" />
+            <mxPoint x="210" y="344.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-11" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="344.5" as="sourcePoint" />
+            <mxPoint x="440" y="344.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-12" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="687.75" y="180" as="sourcePoint" />
+            <mxPoint x="687.75" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-13" value="Cloudfront" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cloudfront;fillColor=#F58536;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="650" y="283.5" width="76.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-14" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="344.5" as="sourcePoint" />
+            <mxPoint x="630" y="344.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-15" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="344.5" as="sourcePoint" />
+            <mxPoint x="840" y="344.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-16" value="AWS Certificate Manager" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.certificate_manager;fillColor=#759C3E;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="650" y="90" width="76.5" height="61.5" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-17" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="484.75" y="420" as="sourcePoint" />
+            <mxPoint x="484.75" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-19" value="S3 Bucket&#xa;" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://seeklogo.com/images/A/amazon-s3-simple-storage-service-logo-9A3F37976E-seeklogo.com.png;" vertex="1" parent="1">
+          <mxGeometry x="860" y="284.5" width="96.5" height="96.5" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-20" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="78.75" y="290" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-21" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="259" y="230" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-22" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="470.25" y="250" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-23" value="3.1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="470.25" y="550" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-24" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="640" y="260" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-25" value="5" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="726.5" y="60" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-26" value="7" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="870" y="250" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-27" value="6" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="710" y="260" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MNxx_mJBA3z7f61Xm1qV-29" value="&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Routing Path&lt;/span&gt;&lt;/div&gt;&lt;ol style=&quot;font-size: 18px;&quot;&gt;&lt;li&gt;User requests to visit stejackson.com&amp;nbsp;&amp;nbsp;&lt;/li&gt;&lt;li&gt;Request hits stejackson.com and gets routed to Route 53.&lt;/li&gt;&lt;li&gt;Route 53 has a Hosted Zone titled stejackson.com which has an A record, CNAME, and the standard NS servers and SOA&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;ol&gt;&lt;li&gt;&amp;nbsp;The NS servers were input in to my Namecheap admin console for the domain i purchased there, to allow DNS resolution, and prove i own this domain.&amp;nbsp;&lt;/li&gt;&lt;/ol&gt;&lt;li&gt;&amp;nbsp;Once the resolution is done, it forwards my response on to my Cloudfront distribution. This is done via the A record recognising that all requests to stejackson.com must be routed to my CDN.&amp;nbsp;&amp;nbsp;&lt;/li&gt;&lt;li&gt;&amp;nbsp;I then requested a certificate from AWS Certificate Manager. Once this was issued i copied the CNAME name and created a CNAME record in route 53, populated the value with the CNAME value. This will allow cert/TLS validation.&amp;nbsp;&lt;/li&gt;&lt;li&gt;&amp;nbsp;Cloudfront will receive the response from ACM&amp;nbsp;&lt;/li&gt;&lt;li&gt;This will then hit the s3 bucket and server my static site.&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="585" width="1032.5" height="303" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
