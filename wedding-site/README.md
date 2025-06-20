@@ -23,4 +23,8 @@ I did a large chunk of the site locally before committing to GitHub, Once it was
 
 Once i had done this and registered my domain in CF, i could add a custom domain to CF pages, guide [here](https://developers.cloudflare.com/pages/configuration/custom-domains/).
 
+# Adding a project to CLoudflare 
+
+I had to install npm which i did using the .tool-versions file in the root of the repo using ASDF. Then i ran `npm i -D wrangler@latest` to install wrangler. This installed it and then i ran `npx wrangler pages project create wedding` which created the project. This will be available at https://wedding-348.pages.dev/ before i add a custom domain to route it to https://hollyandste.wedding. 
+
 
