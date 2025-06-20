@@ -14,7 +14,11 @@ The form on the websie is powered by [formbackend.com](https://www.formbackend.c
 
 The domain was purchased from [NameCheap](https://www.namecheap.com/) and then transferred to [Cloudflare](https://www.Cloudflare.com/en-gb/)
 
-## Local Development
+# Architecture
+
+![Architecure Diagram](./wedding-site-architecture.drawio.svg)
+
+# Local Development
 I edited the website locally first inside docker container with the following command `docker run -it --rm -d -p 8080:80 --name wedding -v ./:/usr/share/nginx/html nginx`.
 This allowed me to see my changes in real time by just refreshing the webpage at localhost:8080 using cmd + shift + R. 
 
@@ -35,12 +39,13 @@ The site is then deployed via the GitHub action in the route of the repo that pu
 Inside CF i set up a custom domain in the CF Pages section, this added a CNAME record to my domain i purchased through namecheap and added to CF for DNS, WAF, DDoS protection etc. 
 
 # Useful Resources
-[CSS help](https://www.w3schools.com/css/default.asp)
-[HTML help](https://www.w3schools.com/html/default.asp)
-[Cloudflare Docs](https://developers.Cloudflare.com/)
+[CSS help](https://www.w3schools.com/css/default.asp) <br>
+[HTML help](https://www.w3schools.com/html/default.asp) <br>
+[Cloudflare Docs](https://developers.Cloudflare.com/) <br>
 Particularly useful pages inside CF Docs
  - https://developers.cloudflare.com/dns/zone-setups/full-setup/setup/
  - https://developers.cloudflare.com/pages/framework-guides/deploy-anything/ 
  - https://developers.cloudflare.com/pages/configuration/custom-domains/
- - https://developers.cloudflare.com/fundamentals/api/get-started/create-token/
+ - https://developers.cloudflare.com/fundamentals/api/get-started/create-token/ <br>
+
 [Updating Thumbnail](https://nickcarmont8.medium.com/how-to-add-a-website-thumbnail-for-sharing-your-html-site-on-social-media-facebook-linkedin-12813f8d2618)
