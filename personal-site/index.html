@@ -151,23 +151,30 @@
 								&bull;	5 GCSE A-C including Maths and English. <br>
 										
 									</ul>
-
-
 							</article>
 
 						<!-- Build -->
 							<article id="build">
 								<h2 class="major">Build</h2>
+								<p>To build the site i used a premade HTML/CSS site, then just amended bits of the HTML to suit what i wanted it to look like.</p>
+								<p>This isnt the first time ive done this, i did it for my wedding website to and the code for this can be found in the same repo <a href="https://github.com/stejackson94/static-site/tree/main/wedding-site">here.</a></p>
+								<p>This was the old site build architecture </p>
 								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Here you will find about more about what i used to build and deploy the site</p>
+								<p>It was the first DevOps style personal project i really did, however after gaining some more knowledge especially around Cloudflare, i wanted to take this further and add some protection around the site so i could share it on LinkedIn.</p>
+								<p>This time around i saw a colleague, George, do some work where he pointed an AWS Cloudfront distribution at Cloudflare so we could take advantage of the WAF, DDoS protection etc that we get.</p>
+								<p>I thought this was smart so wanted to implement it myself on my personal site, it also meant that i could lose the SSL cert i was paying for from AWS as Cloudflare issue you one to each domain you register with them, cost saving (only 50p) and increased security, double win!</p>
+								<p>So this time round the site will be deployed upon a push to the GitHub folder it sits in, a GitHub Action will then kick off to run the Terraform to build the s3 bucket, build the cloudfront distribution and then copy the contents of the site to s3.
+									There will already be a DNS record set in Cloudflare that points the cloudfront distribution at <a href="https://stejackson.com/">stejackson.com.</a></p>
+
 							</article>
 
 						<!-- Socials -->
 						<article id="social">
 							<h2 class="major">Socials</h2>
-							<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+							<span class="image main"><img src="images/pic04.png" alt="" /></span>
 							<p>Here are the links to my LinkedIn and my GitHub profile.</p>
 							<p>Inside my GitHub you can expect to find repos for my Homelab and the static site mono repo that contains both the code for my wedding website and this one.</p>
+							<p>Over time i will add more too, who knows what projects i'll push up!</p>
 							<ul class="icons">
 								<li><a href="https://www.linkedin.com/in/stephenjackson1994/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 								<li><a href="https://github.com/stejackson94" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
