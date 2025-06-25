@@ -41,7 +41,7 @@ resource "aws_cloudfront_distribution" "website_distribution" {
     realtime_log_config_arn    = null
     response_headers_policy_id = null
     smooth_streaming           = false
-    target_origin_id           = aws_s3_bucket.websiteBucket.id
+    target_origin_id           = "stejackson.com.s3-website.eu-west-2.amazonaws.com"
     trusted_key_groups         = []
     trusted_signers            = []
     viewer_protocol_policy     = "allow-all"
@@ -52,9 +52,9 @@ resource "aws_cloudfront_distribution" "website_distribution" {
   origin {
     connection_attempts      = 3
     connection_timeout       = 10
-    domain_name              = aws_s3_bucket.websiteBucket.id
+    domain_name              = "stejackson.com.s3-website.eu-west-2.amazonaws.com"
     origin_access_control_id = null
-    origin_id                = aws_s3_bucket.websiteBucket.id
+    origin_id                = "stejackson.com.s3-website.eu-west-2.amazonaws.com"
     origin_path              = null
     custom_origin_config {
       http_port                = 80
@@ -62,7 +62,7 @@ resource "aws_cloudfront_distribution" "website_distribution" {
       origin_keepalive_timeout = 5
       origin_protocol_policy   = "http-only"
       origin_read_timeout      = 30
-      origin_ssl_protocols     = ["TLSv1.3", "TLSv1.2"]
+      origin_ssl_protocols     = ["TLSv1.2"]
     }
   }
   restrictions {
