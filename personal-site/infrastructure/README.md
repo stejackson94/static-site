@@ -6,3 +6,7 @@ I was originally going to do this by creating the individual resources again and
 2. [The ability to import state to state files from this new HCL code](https://developer.hashicorp.com/terraform/cli/import/usage)
 
 This meant i didnt have to write the terraform from scratch, of course i needed to check that the subsequent terraform plans and what not looked OK and didnt change anything but saved me a bunch of time. 
+
+I also took the time to set up the s3 backend following the AWS docs.
+
+Terraform authenticates to AWS via secrets inside my repository which i will pass as env variables to my GH action.

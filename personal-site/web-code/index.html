@@ -167,7 +167,7 @@
 								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
 								<p>It was the first DevOps style personal project i really did, however after gaining some more knowledge especially around Cloudflare, i wanted to take this further and add some protection around the site so i could share it on LinkedIn.</p>
 								<p>This time around i saw a colleague, George, do some work where he pointed an AWS Cloudfront distribution at Cloudflare so we could take advantage of the WAF, DDoS protection etc that we get.</p>
-								<p>So this time round the site will be deployed upon a push to the GitHub folder it sits in, a GitHub Action will then kick off to run the Terraform to build the s3 bucket, build the cloudfront distribution and then copy the contents of the site to s3.
+								<p>So this time round the site will be deployed upon a push to the GitHub folder it sits in, a GitHub Action will then kick off to run the Terraform to build the s3 bucket, build the cloudfront distribution and the ACM cert. Then gitHub Actions will copy the contents of the site to s3.
 									There will already be a DNS record set in Cloudflare that points the cloudfront distribution at <a href="https://stejackson.com/">stejackson.com.</a></p>
 
 							</article>
