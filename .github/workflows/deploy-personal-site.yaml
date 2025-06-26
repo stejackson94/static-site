@@ -48,10 +48,14 @@ jobs:
     needs: check
     if: ${{ needs.check.outputs.terraform-changes == 'false' }}
     runs-on: ubuntu-latest
+    env:
+      TF_VAR_access_key : ${{ secrets.TF_VAR_ACCESS_KEY }}
+      TF_VAR_secret_key : ${{ secrets.TF_VAR_SECRET_KEY }}
     defaults:
       run:
         working-directory: ./personal-site/infrastructure
     steps:
+      - uses: hashicorp/setup-terraform@v3
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -60,12 +64,18 @@ jobs:
           # echo "This job runs only when all modified files are under the 'infrastructure' folder."
           # echo "terraform-changes: ${{ needs.check.outputs.terraform-changes }}"
           pwd
-          
-      - name: Initialise Terraform
-        run: terraform init
 
-      - name: Run Terraform
-        run: terraform plan
+      - name: Terraform Init
+        id: init
+        run: terraform init -input=false
+
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan -no-color -input=false
 
 
 
