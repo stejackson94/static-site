@@ -60,11 +60,12 @@ jobs:
           # echo "This job runs only when all modified files are under the 'infrastructure' folder."
           # echo "terraform-changes: ${{ needs.check.outputs.terraform-changes }}"
           pwd
-      # - name: Initialise Terraform
-      #   run: terraform init
+          
+      - name: Initialise Terraform
+        run: terraform init
 
-      # - name: Run Terraform
-      #   run: terraform plan
+      - name: Run Terraform
+        run: terraform plan
 
 
 
