@@ -3,6 +3,10 @@ on:
     # paths:
     #   - personal-site/*
 
+env:
+  TF_VAR_access_key : ${{ secrets.TF_VAR_ACCESS_KEY }}
+  TF_VAR_secret_key : ${{ secrets.TF_VAR_SECRET_KEY }}
+
 jobs:
   check:
     name: Check files
@@ -11,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 2
 
@@ -44,8 +48,24 @@ jobs:
     needs: check
     if: ${{ needs.check.outputs.terraform-changes == 'false' }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./personal-site/infrastructure
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Run for 'infrastructure' folder
         run: |
-          echo "This job runs only when all modified files are under the 'infrastructure' folder."
-          echo "terraform-changes: ${{ needs.check.outputs.terraform-changes }}"
+          # echo "This job runs only when all modified files are under the 'infrastructure' folder."
+          # echo "terraform-changes: ${{ needs.check.outputs.terraform-changes }}"
+          pwd
+      # - name: Initialise Terraform
+      #   run: terraform init
+
+      # - name: Run Terraform
+      #   run: terraform plan
+
+
+
+
