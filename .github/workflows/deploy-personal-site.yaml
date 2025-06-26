@@ -40,9 +40,6 @@ jobs:
 
           echo "terraform-changes=$all_in_infra" >> $GITHUB_OUTPUT
 
-      - name: Debug output
-        run: echo "TERRAFORM_CHANGE=${{ steps.check_files.outputs.terraform-changes }}"
-
   terraform_apply_and_plan:
     name: Build Infrastructure via Terraform
     needs: check
