@@ -46,7 +46,7 @@ jobs:
   terraform_apply_and_plan:
     name: Build Infrastructure via Terraform
     needs: check
-    if: ${{ needs.check.outputs.terraform-changes == 'false' }}
+    if: ${{ needs.check.outputs.terraform-changes == 'true' }}
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID : ${{ secrets.TF_VAR_ACCESS_KEY }}
@@ -81,6 +81,27 @@ jobs:
         id: apply
         run: terraform apply -auto-approve
 
+  push_website_code_to_s3:
+    name: Push Website Code to S3 Bucket
+    needs: terraform_apply_and_plan
+    if: always() && needs.terraform_apply_and_plan.result == 'success' || needs.terraform_apply_and_plan.result == 'failure' || needs.terraform_apply_and_plan.result == 'skipped'
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID : ${{ secrets.TF_VAR_ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY : ${{ secrets.TF_VAR_SECRET_KEY }}
+    defaults:
+      run:
+        working-directory: ./personal-site/web-code
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-
-
+      - name: Setup AWS CLI
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.TF_VAR_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.TF_VAR_SECRET_KEY }}
+          aws-region: eu-west-2
+      - name: Sync files to S3 bucket
+        run: |
+          aws s3 cp . s3://stejackson.com --recursive
