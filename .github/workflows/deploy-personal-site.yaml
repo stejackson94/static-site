@@ -7,7 +7,7 @@ jobs:
   check:
     name: Check files
     outputs:
-      run_job: ${{ steps.check_files.outputs.run_job }}
+      terraform-changes: ${{ steps.check_files.outputs.terraform-changes }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -15,31 +15,37 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: check modified files
+      - name: Check modified files
         id: check_files
         run: |
           echo "=============== list modified files ==============="
           git diff --name-only HEAD^ HEAD
-          
+
           echo "========== check paths of modified files =========="
           git diff --name-only HEAD^ HEAD > files.txt
+
+          all_in_infra=true
           while IFS= read -r file
           do
-            echo $file
+            echo "$file"
             if [[ $file != personal-site/infrastructure/* ]]; then
-              echo "This modified file is not under the 'infrastructure' folder."
-              echo "run_job=false" >> $GITHUB_OUTPUT
+              all_in_infra=false
               break
-            else
-              echo "run_job=true" >> $GITHUB_OUTPUT
             fi
           done < files.txt
 
+          echo "terraform-changes=$all_in_infra" >> $GITHUB_OUTPUT
+
+      - name: Debug output
+        run: echo "TERRAFORM_CHANGE=${{ steps.check_files.outputs.terraform-changes }}"
+
   terraform_apply_and_plan:
-    name: Build Infrastructure
+    name: Build Infrastructure via Terraform
     needs: check
-    if: ${{ needs.check.outputs.run_job }} == true
+    if: ${{ needs.check.outputs.terraform-changes == 'false' }}
     runs-on: ubuntu-latest
     steps:
-      - name: run for 'infrastructure' folder
-        run: echo "This job runs only when all the modified files are under the 'infrastructure' folder."
+      - name: Run for 'infrastructure' folder
+        run: |
+          echo "This job runs only when all modified files are under the 'infrastructure' folder."
+          echo "terraform-changes: ${{ needs.check.outputs.terraform-changes }}"
