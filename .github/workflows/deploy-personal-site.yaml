@@ -4,8 +4,8 @@ on:
     #   - personal-site/*
 
 env:
-  TF_VAR_access_key : ${{ secrets.TF_VAR_ACCESS_KEY }}
-  TF_VAR_secret_key : ${{ secrets.TF_VAR_SECRET_KEY }}
+  AWS_ACCESS_KEY_ID : ${{ secrets.TF_VAR_ACCESS_KEY }}
+  AWS_SECRET_ACCESS_KEY : ${{ secrets.TF_VAR_SECRET_KEY }}
 
 jobs:
   check:
@@ -49,8 +49,8 @@ jobs:
     if: ${{ needs.check.outputs.terraform-changes == 'false' }}
     runs-on: ubuntu-latest
     env:
-      TF_VAR_access_key : ${{ secrets.TF_VAR_ACCESS_KEY }}
-      TF_VAR_secret_key : ${{ secrets.TF_VAR_SECRET_KEY }}
+      AWS_ACCESS_KEY_ID : ${{ secrets.TF_VAR_ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY : ${{ secrets.TF_VAR_SECRET_KEY }}
     defaults:
       run:
         working-directory: ./personal-site/infrastructure
@@ -76,6 +76,10 @@ jobs:
       - name: Terraform Plan
         id: plan
         run: terraform plan -no-color -input=false
+
+      - name: Terraform Apply
+        id: apply
+        run: terraform apply -auto-approve
 
 
 

@@ -9,4 +9,6 @@ This meant i didnt have to write the terraform from scratch, of course i needed 
 
 I also took the time to set up the s3 backend following the AWS docs.
 
-Terraform authenticates to AWS via secrets inside my repository which i will pass as env variables to my GH action.
+Terraform authenticates to AWS via secrets inside my repository which i will pass as env variables to my GH action. 
+
+The setup [Terraform Github Action](https://github.com/marketplace/actions/hashicorp-setup-terraform) was used to set up the correct version of terraform and then subsequently run the commands needed. 
