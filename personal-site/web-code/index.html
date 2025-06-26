@@ -169,6 +169,7 @@
 								<p>This time around i saw a colleague, George, do some work where he pointed an AWS Cloudfront distribution at Cloudflare so we could take advantage of the WAF, DDoS protection etc that we get.</p>
 								<p>So this time round the site will be deployed upon a push to the GitHub folder it sits in, a GitHub Action will then kick off to run the Terraform to build the s3 bucket, build the cloudfront distribution and the ACM cert. Then gitHub Actions will copy the contents of the site to s3.
 									There will already be a DNS record set in Cloudflare that points the cloudfront distribution at <a href="https://stejackson.com/">stejackson.com.</a></p>
+								<p>More info on the deployment can be found in the git repo for the site <a href="https://github.com/stejackson94/static-site">here.</a></p>
 
 							</article>
 
