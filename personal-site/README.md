@@ -7,6 +7,9 @@ The website template was sourced from html5up.net, more info on this can be foun
 
 The domain was purchased from [NameCheap](https://www.namecheap.com/) and then transferred to [Cloudflare](https://www.Cloudflare.com/en-gb/)
 
+# Architecture 
+![Architecure Diagram](./personal-website.drawio.drawio.svg)
+
 # Local Development
 I edited the website locally first inside docker container with the following command `docker run -it --rm -d -p 8080:80 --name wedding -v ./:/usr/share/nginx/html nginx`.
 This allowed me to see my changes in real time by just refreshing the webpage at localhost:8080 using cmd + shift + R. This was run inside the web-code folder.
@@ -30,5 +33,7 @@ The GitHub Action has multiple parts to it, the first check job checks out the c
 The next section of the action called terraform_apply_and_plan checks this prior set variable and if its true then it rusn this block as it means additional infra is needed, if it doesnt then it skips it.
 
 The next section called push_website_code_to_s3 pushes the web-code up to my s3 bucket no matter whether the previous section ran or not, but will only do it after it has checked whether it needs to apply IaC. 
+
+The next section will invalidate the cache on the cloudfront distribution as opposed to waiting for it to expire i would like the update to be instant. 
 
 

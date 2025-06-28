@@ -99,6 +99,11 @@ jobs:
           aws-access-key-id: ${{ secrets.TF_VAR_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.TF_VAR_SECRET_KEY }}
           aws-region: eu-west-2
+
       - name: Sync files to S3 bucket
         run: |
           aws s3 cp . s3://stejackson.com --recursive
+
+      - name: Invalidate Cache  
+        run: |
+          aws cloudfront create-invalidation --distribution-id E2K47EF7K7B2LH --paths "/*"

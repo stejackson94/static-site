@@ -162,12 +162,14 @@
 								<h2 class="major">Build</h2>
 								<p>To build the site i used a premade HTML/CSS site, then just amended bits of the HTML to suit what i wanted it to look like.</p>
 								<p>This isnt the first time ive done this, i did it for my wedding website to and the code for this can be found in the same repo <a href="https://github.com/stejackson94/static-site/tree/main/wedding-site">here.</a></p>
-								<p>This was the old site build architecture </p>
+								<p>This was the old site build architecture; </p>
 								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
 								<p>It was the first DevOps style personal project i really did, however after gaining some more knowledge especially around Cloudflare, i wanted to take this further and add some protection around the site so i could share it on LinkedIn.</p>
 								<p>This time around i saw a colleague, George, do some work where he pointed an AWS Cloudfront distribution at Cloudflare so we could take advantage of the WAF, DDoS protection etc that we get.</p>
-								<p>So this time round the site will be deployed upon a push to the GitHub folder it sits in, a GitHub Action will then kick off to run the Terraform to build the s3 bucket, build the cloudfront distribution and the ACM cert. Then gitHub Actions will copy the contents of the site to s3.
+								<p>So this time round the site will be deployed upon a push to the GitHub folder it sits in, a GitHub Action will then kick off to run the Terraform to build the s3 bucket, build the cloudfront distribution and the ACM cert. Then gitHub Actions will copy the contents of the site to s3, and invalidate the current cache so it updates instantly.
 									There will already be a DNS record set in Cloudflare that points the cloudfront distribution at <a href="https://stejackson.com/">stejackson.com.</a></p>
+								<p>nNew site architecture can be found here:</p>
+								<span class="image main"><img src="images/personal-website.drawio.drawio.png" alt="" /></span>
 								<p>More info on the deployment can be found in the git repo for the site <a href="https://github.com/stejackson94/static-site">here.</a></p>
 
 							</article>
