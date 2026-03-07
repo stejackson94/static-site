@@ -1,4 +1,4 @@
 variable "domainName" {
-    type = string
-    default = "stejackson.com"
+  type    = string
+  default = "stejackson.com"
 }

@@ -5,8 +5,8 @@ resource "aws_s3_bucket" "websiteBucket" {
   force_destroy       = null
   object_lock_enabled = false
   tags = {
-    Name        = "website s3 bucket"
-    BuiltBy     = "Terraform"
+    Name    = "website s3 bucket"
+    BuiltBy = "Terraform"
   }
 }
 
@@ -23,11 +23,11 @@ resource "aws_cloudfront_distribution" "website_distribution" {
   retain_on_delete                = false
   staging                         = false
   tags = {
-    Name        = "website cloudfront distribution"
-    BuiltBy     = "Terraform"
+    Name    = "website cloudfront distribution"
+    BuiltBy = "Terraform"
   }
-  wait_for_deployment             = true
-  web_acl_id                      = null
+  wait_for_deployment = true
+  web_acl_id          = null
   default_cache_behavior {
     allowed_methods            = ["GET", "HEAD"]
     cache_policy_id            = "658327ea-f89d-4fab-a63d-7e88639e58f6"
@@ -39,12 +39,12 @@ resource "aws_cloudfront_distribution" "website_distribution" {
     min_ttl                    = 0
     origin_request_policy_id   = null
     realtime_log_config_arn    = null
-    response_headers_policy_id = null
+    response_headers_policy_id = aws_cloudfront_response_headers_policy.website_security_headers.id
     smooth_streaming           = false
     target_origin_id           = "stejackson.com.s3-website.eu-west-2.amazonaws.com"
     trusted_key_groups         = []
     trusted_signers            = []
-    viewer_protocol_policy     = "allow-all"
+    viewer_protocol_policy     = "redirect-to-https"
     grpc_config {
       enabled = false
     }
@@ -78,7 +78,40 @@ resource "aws_cloudfront_distribution" "website_distribution" {
     minimum_protocol_version       = "TLSv1.2_2021"
     ssl_support_method             = "sni-only"
   }
-  depends_on = [ aws_acm_certificate.website_cert ]
+  depends_on = [aws_acm_certificate.website_cert]
+}
+
+resource "aws_cloudfront_response_headers_policy" "website_security_headers" {
+  name = "stejackson-website-security-headers"
+
+  security_headers_config {
+    content_type_options {
+      override = true
+    }
+
+    frame_options {
+      frame_option = "DENY"
+      override     = true
+    }
+
+    referrer_policy {
+      referrer_policy = "strict-origin-when-cross-origin"
+      override        = true
+    }
+
+    strict_transport_security {
+      access_control_max_age_sec = 31536000
+      include_subdomains         = true
+      preload                    = true
+      override                   = true
+    }
+
+    xss_protection {
+      protection = true
+      mode_block = true
+      override   = true
+    }
+  }
 }
 
 # #ACM Cert
@@ -93,10 +126,10 @@ resource "aws_acm_certificate" "website_cert" {
   private_key               = null # sensitive
   subject_alternative_names = [var.domainName]
   tags = {
-    Name        = "website ACM cert"
-    BuiltBy     = "Terraform"
+    Name    = "website ACM cert"
+    BuiltBy = "Terraform"
   }
-  validation_method         = "DNS"
+  validation_method = "DNS"
   options {
     certificate_transparency_logging_preference = "ENABLED"
   }
