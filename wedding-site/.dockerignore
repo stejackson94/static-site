@@ -1,7 +1,10 @@
 # Keep build context minimal.
 *
 !Dockerfile
+!nginx.conf
 !index.html
+!robots.txt
+!sitemap.xml
 !intro.jpg
 !assets/**
 !images/**
