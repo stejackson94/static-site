@@ -56,11 +56,10 @@ The workflow has three key stages:
 3. `push_website_code_to_s3`: always runs after the infra stage (success, failure, or skipped) to deploy website content
 
 During website deployment, CI now:
-1. Builds CSS from Sass (`assets/sass/main.scss` and `assets/sass/noscript.scss`)
-2. Injects an automatic cache-buster (`__ASSET_VERSION__` -> short commit SHA) into HTML asset URLs
-3. Syncs non-HTML assets to S3 with revalidation-friendly caching (`max-age=3600,must-revalidate`)
-4. Uploads HTML with short cache (`max-age=300,must-revalidate`)
-5. Invalidates CloudFront (`/*`) so updates are available quickly
+1. Injects an automatic cache-buster (`__ASSET_VERSION__` -> short commit SHA) into HTML asset URLs
+2. Syncs non-HTML assets to S3 with revalidation-friendly caching (`max-age=3600,must-revalidate`)
+3. Uploads HTML with short cache (`max-age=300,must-revalidate`)
+4. Invalidates CloudFront (`/*`) so updates are available quickly
 
 This prevents stale CSS/JS rendering issues caused by CDN/browser cache drift between HTML and static assets.
 
