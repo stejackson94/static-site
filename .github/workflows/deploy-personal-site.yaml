@@ -93,6 +93,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build CSS from Sass
+        run: |
+          npm install --global sass
+          sass assets/sass/main.scss assets/css/main.css --style=compressed
+          sass assets/sass/noscript.scss assets/css/noscript.css --style=compressed
+
       - name: Setup AWS CLI
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -100,9 +111,20 @@ jobs:
           aws-secret-access-key: ${{ secrets.TF_VAR_SECRET_KEY }}
           aws-region: eu-west-2
 
-      - name: Sync files to S3 bucket
+      - name: Sync static assets to S3 bucket
         run: |
-          aws s3 cp . s3://stejackson.com --recursive
+          aws s3 sync . s3://stejackson.com \
+            --delete \
+            --exclude "*.html" \
+            --cache-control "public,max-age=31536000,immutable"
+
+      - name: Upload HTML files with short cache
+        run: |
+          find . -type f -name "*.html" | while read -r file; do
+            aws s3 cp "$file" "s3://stejackson.com/${file#./}" \
+              --cache-control "public,max-age=300,must-revalidate" \
+              --content-type "text/html"
+          done
 
       - name: Invalidate Cache  
         run: |
