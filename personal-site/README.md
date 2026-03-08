@@ -45,13 +45,23 @@ The terraform for this stands up the s3 bucket, the cloudfront distribution and 
 
 This saved me a load of time and effort and was a good way of learning another side of TF. 
 
-## Github Action
-The GitHub Action has multiple parts to it, the first check job checks out the code and then does a git diff to see what files were changed and puts them in to a txt file. The next section in the check echos each individual file and then checks if thats in the folder personal-site/infrastructure. If its not then it sets a variable as false, and if it is then it sets it true.
+## GitHub Action
+The personal-site deploy workflow now supports both automatic and manual triggers:
+1. `push` to files under `personal-site/**`
+2. `workflow_dispatch` from the GitHub Actions UI
 
-The next section of the action called terraform_apply_and_plan checks this prior set variable and if its true then it rusn this block as it means additional infra is needed, if it doesnt then it skips it.
+The workflow has three key stages:
+1. `check`: inspects changed files and determines whether all changes are under `personal-site/infrastructure/*`
+2. `terraform_apply_and_plan`: runs only when infrastructure files changed
+3. `push_website_code_to_s3`: always runs after the infra stage (success, failure, or skipped) to deploy website content
 
-The next section called push_website_code_to_s3 pushes the web-code up to my s3 bucket no matter whether the previous section ran or not, but will only do it after it has checked whether it needs to apply IaC. 
+During website deployment, CI now:
+1. Builds CSS from Sass (`assets/sass/main.scss` and `assets/sass/noscript.scss`)
+2. Injects an automatic cache-buster (`__ASSET_VERSION__` -> short commit SHA) into HTML asset URLs
+3. Syncs non-HTML assets to S3 with revalidation-friendly caching (`max-age=3600,must-revalidate`)
+4. Uploads HTML with short cache (`max-age=300,must-revalidate`)
+5. Invalidates CloudFront (`/*`) so updates are available quickly
 
-The next section will invalidate the cache on the cloudfront distribution as opposed to waiting for it to expire I would like the update to be instant. 
+This prevents stale CSS/JS rendering issues caused by CDN/browser cache drift between HTML and static assets.
 
 
