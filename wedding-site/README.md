@@ -19,8 +19,26 @@ The domain was purchased from [NameCheap](https://www.namecheap.com/) and then t
 ![Architecure Diagram](./wedding-site-architecture.drawio.svg)
 
 # Local Development
-I edited the website locally first inside docker container with the following command `docker run -it --rm -d -p 8080:80 --name wedding -v ./:/usr/share/nginx/html nginx`.
-This allowed me to see my changes in real time by just refreshing the webpage at localhost:8080 using cmd + shift + R. 
+From the repo root, run:
+
+```bash
+make local-wedding
+```
+
+This builds `wedding-site` and serves it at `http://localhost:8081/`.
+
+You can also build and run directly using the Dockerfile in this folder.
+
+From inside `wedding-site/`:
+
+```bash
+docker build -t ste-wedding-site-local .
+docker run --rm -p 8081:80 ste-wedding-site-local
+```
+
+Then open `http://localhost:8081/`.
+
+If you are making changes, stop the running container and rebuild the image to pick up updates.
 
 # Deployment Overview 
 I did a large chunk of the site locally before committing to GitHub, Once it was complete i have a GitHub Action that pushes all the files up to Cloudflare Pages, using the [Cloudflare Wrangler-action](https://github.com/Cloudflare/wrangler-action).

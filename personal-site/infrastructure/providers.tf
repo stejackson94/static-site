@@ -3,9 +3,9 @@ terraform {
 
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-      configuration_aliases = [ aws.virginia ]
+      source                = "hashicorp/aws"
+      version               = "~> 5.0"
+      configuration_aliases = [aws.virginia]
     }
   }
 
@@ -25,6 +25,6 @@ provider "aws" {
 #ACM needs to be issued in us-east-1
 provider "aws" {
   region = "us-east-1"
-  alias = "virginia"
+  alias  = "virginia"
 }
 

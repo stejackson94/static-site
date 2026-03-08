@@ -1,0 +1,7 @@
+# Keep build context minimal.
+*
+!Dockerfile
+!index.html
+!intro.jpg
+!assets/**
+!images/**
