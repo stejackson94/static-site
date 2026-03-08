@@ -2,6 +2,7 @@ on:
   push:
     paths:
       - wedding-site/*
+  workflow_dispatch:
 
 jobs:
   deploy:

@@ -2,6 +2,7 @@ on:
   push:
     paths:
       - personal-site/**
+  workflow_dispatch:
 
 env:
   AWS_ACCESS_KEY_ID : ${{ secrets.TF_VAR_ACCESS_KEY }}
