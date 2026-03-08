@@ -26,24 +26,54 @@
 
 				<!-- Header -->
 					<header id="header">
-						<div class="logo">
-							<span class="icon fa-smile"></span>
-						</div>
-						<div class="content">
+						<div class="content animate-fade-in">
 							<div class="inner">
-								<h1>Ste Jackson Personal Website</h1>
-								<p>My personal website, where you will find a bit about me, my CV, the site build and links to my socials.</p>
+								<h1 class="animate-slide-in">Ste Jackson</h1>
+								<p class="animate-fade-in-delayed">Product Infrastructure Engineer | DevOps Specialist</p>
+								<p class="animate-fade-in-delayed-2">Building reliable, scalable infrastructure with code</p>
 							</div>
 						</div>
-						<nav>
-							<ul>
-								<li><a href="#about">About Me</a></li>
-								<li><a href="#CV">CV</a></li>
-								<li><a href="#build">Site build</a></li>
-								<li><a href="#social">Socials</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
+						<div class="stat-badges animate-fade-in-delayed-3">
+							<div class="stat-badge interest-tag">
+								<span class="interest-icon">⚙️</span>
+								<span class="interest-label">DevOps</span>
+							</div>
+							<div class="stat-badge interest-tag">
+								<span class="interest-icon">☁️</span>
+								<span class="interest-label">Cloud</span>
+							</div>
+							<div class="stat-badge interest-tag">
+								<span class="interest-icon">🐍</span>
+								<span class="interest-label">Python</span>
+							</div>
+							<div class="stat-badge interest-tag">
+								<span class="interest-icon">🔶</span>
+								<span class="interest-label">AWS</span>
+							</div>
+							<div class="stat-badge interest-tag">
+								<span class="interest-icon">🤖</span>
+								<span class="interest-label">AI</span>
+							</div>
+						</div>
+						<div class="tech-showcase animate-fade-in-delayed-3">
+							<div class="tech-icons">
+								<p align="center">
+									<a href="https://skillicons.dev">
+										<img src="https://skillicons.dev/icons?i=aws,bash,bitbucket,cloudflare,docker,dynamodb,fastapi,git,github,githubactions,gitlab,grafana,jenkins,kubernetes,linux,md,mint,postman,py,rabbitmq,terraform,vim,windows,yarn" alt="Technology icons" />
+									</a>
+								</p>
+							</div>
+						</div>
+						<nav class="animate-fade-in-delayed-5">
+						<ul>
+							<li><a href="#about">About Me</a></li>
+							<li><a href="#projects">Projects</a></li>
+							<li><a href="#skills">Skills</a></li>
+							<li><a href="#CV">CV</a></li>
+							<li><a href="#architecture">Architecture</a></li>
+							<li><a href="#social">Socials</a></li>
+						</ul>
+					</nav>
 					</header>
 
 				<!-- Main -->
@@ -53,115 +83,337 @@
 							<article id="about">
 								<h2 class="major">About Me</h2>
 								<span class="image right"><img src="images/pic01.jpg" alt="Portrait of Ste Jackson" /></span>
-								<p>Hello, as you will have worked out I'm Ste Jackson. I thought I'd build this site as a bit of a L&D project. Somewhere to host my CV, do some HTML/CSS editing, alongside deploying and building it via GitHub Actions, Terraform, AWS and Cloudflare. You can find more on that in the site build section.</p>
-								<p>Anyway, a bit about me. I am a Product Infrastructure Engineer currently, but the job title is mostly meaningless; I do whatever comes my way. If I'm not at work, you will usually find me doing one of these:</p>
-								<ul>
-									<li>Gym</li>
-									<li>Spending time with my fiancee and my dog</li>
-									<li>Spending time with family and friends</li>
-									<li>Playing on my Steam Deck</li>
-									<li>Doing some form of DevOps-related study</li>
-								</ul>
+								<p class="about-lead">I am a Product Infrastructure Engineer focused on building reliable delivery platforms, resilient cloud infrastructure, and practical automation that helps teams ship faster with less risk.</p>
+								<p>This site is my hands-on sandbox and portfolio. I use it to share my CV, showcase projects, and demonstrate how I design, provision, secure, and deploy infrastructure with tools like Terraform, AWS, Cloudflare, Docker, and GitHub Actions.</p>
+
+								<div class="about-highlights">
+									<div class="about-highlight-card">
+										<h3>What I Focus On</h3>
+										<ul>
+											<li>Cloud infrastructure and platform reliability</li>
+											<li>CI/CD workflow design and optimization</li>
+											<li>Infrastructure as Code and repeatable environments</li>
+										</ul>
+									</div>
+									<div class="about-highlight-card">
+										<h3>Outside Work</h3>
+										<ul>
+											<li>Gym and staying active</li>
+											<li>Spending time with my fiancee, dog, family, and friends</li>
+											<li>Gaming on my Steam Deck and continuous DevOps learning</li>
+										</ul>
+									</div>
+								</div>
 								<h2 class="major">My Dog</h2>
 								<span class="image main"><img src="images/alvin.jpeg" alt="Alvin, Ste Jackson's dog" /></span>
 							</article>
 
-						<!-- CV -->
+						<!-- Projects -->
+							<article id="projects">
+								<h2 class="major">Projects & Case Studies</h2>
+								<p>Here are some key projects and achievements that showcase my infrastructure and DevOps expertise.</p>
+								
+								<div class="projects-grid">
+									<div class="project-card">
+										<h3>PHP 7.4 to 8.1 Major Upgrade</h3>
+										<p class="project-stat">200+ Servers | 190 Production</p>
+										<p>Led a critical server upgrade involving 190+ production servers as part of a major PHP version migration. Coordinated with the Principal SRE, managed deployment strategy, and ensured zero downtime migration across the infrastructure.</p>
+										<ul>
+											<li>Planned multi-phase rollout strategy</li>
+											<li>Managed configuration and compatibility issues</li>
+											<li>Coordinated testing and validation</li>
+											<li>Zero incidents during production migration</li>
+										</ul>
+									</div>
+
+									<div class="project-card">
+										<h3>Project Pipeline Optimization</h3>
+										<p class="project-stat">5% - 50% Time Savings</p>
+										<p>As part of a multidisciplinary taskforce, improved CI/CD pipelines across inherited tech stack. Optimized multi-stage Dockerfiles and GitHub Actions workflows to reduce build and deployment times significantly.</p>
+										<ul>
+											<li>Multi-stage Dockerfile optimization</li>
+											<li>GitHub Actions workflow improvements</li>
+											<li>Performance analysis and benchmarking</li>
+											<li>Documentation for team adoption</li>
+										</ul>
+									</div>
+
+									<div class="project-card">
+										<h3>ECS Migration from EKS</h3>
+										<p class="project-stat">Infrastructure Consolidation</p>
+										<p>Migrated main products from Kubernetes (EKS) to Amazon ECS, improving cost efficiency and operational simplicity while maintaining reliability and performance metrics.</p>
+										<ul>
+											<li>Architecture design and planning</li>
+											<li>Service configuration in ECS</li>
+											<li>Load balancing and networking setup</li>
+											<li>Monitoring and observability integration</li>
+										</ul>
+									</div>
+
+									<div class="project-card">
+										<h3>Personal Website & CI/CD</h3>
+										<p class="project-stat">Full Stack DevOps</p>
+										<p>Designed and deployed this personal website using AWS S3, CloudFront, Terraform, GitHub Actions, and Cloudflare for protection and performance. An end-to-end demonstration of modern DevOps practices.</p>
+										<ul>
+											<li>Infrastructure as Code with Terraform</li>
+											<li>GitHub Actions CI/CD automation</li>
+											<li>AWS S3 + CloudFront + ACM setup</li>
+											<li>Cloudflare DDoS protection & WAF</li>
+										</ul>
+									</div>
+								</div>
+							</article>
 							<article id="CV">
 								<h2 class="major">CV</h2>
-								<p>Here you will find my CV, Please reach out to me via LinkedIn if you would like to discuss anything.</p>
+								<p>Here you will find my CV. Please reach out to me via LinkedIn if you would like to discuss anything.</p>
 
-								<h3>Core Skills and Technologies</h3>
-								<ul>
-									<li>Cloud: AWS (ECS, EKS, Lambda, S3, ECR, Route53, IAM, CloudFront, DynamoDB, API Gateway)</li>
-									<li>Infrastructure as Code: Terraform, Chef</li>
-									<li>CI/CD: GitHub Actions, Jenkins, Groovy, GitOps, Ansible</li>
-									<li>Scripting: Bash, Python, Groovy</li>
-									<li>Observability: Prometheus, Grafana, Telegraf, Sensu</li>
-									<li>Leadership: Mentoring, Technical Planning, Agile Delivery Lead practices</li>
-								</ul>
-								
+								<!-- Key Achievements -->
 								<h3>Key Achievements</h3>
-								<ul>
-									<li>Alongside our Principal SRE, led the upgrade of over 200 servers, including 190 production servers, for a major PHP 7.4 to 8.1 upgrade.</li>
-									<li>Part of the "Project Pipeline" taskforce, a multidisciplinary group improving pipelines across our inherited tech stack. Included multi-stage Dockerfiles and optimised GitHub Actions, with improvements ranging from 5% to 50% time savings.</li>
-									<li>Led onboarding of a new stack into our squad when two brands merged onto one platform, including documentation, knowledge sharing, and acting as a key contact point.</li>
-									<li>Volunteered to deliver back-to-back EKS upgrades, including forming a delivery team and preparing, delivering, and reviewing plans after each upgrade.</li>
-								</ul>
-								
-								<h3>Employment</h3>
-								<h4>Twenty First Group</h4>
-								<h5>Product Infrastructure Engineer Oct 2025 - Present</h5>
-								<ul>
-									<li>Configure and support CI/CD pipelines across multiple repos.</li>
-									<li>Migrated our main products from EKS to ECS.</li>
-									<li>Implemented multiple template repos for faster project startup (Python and R).</li>
-									<li>Worked across multiple languages, including Python, R, and Java, sometimes using AI IDEs like Cursor.</li>
-									<li>Streamlined processes and documented them to support the team while on call.</li>
-									<li>Covered a bi-weekly on-call rotation by choice.</li>
-								</ul>
+								<div class="achievements-grid">
+									<div class="achievement-badge">
+										<span class="achievement-icon">🖥️</span>
+										<span class="achievement-text">200+ Servers Upgraded</span>
+										<span class="achievement-desc">PHP 7.4 to 8.1 major version migration</span>
+									</div>
+									<div class="achievement-badge">
+										<span class="achievement-icon">⚡</span>
+										<span class="achievement-text">5-50% Faster Pipelines</span>
+										<span class="achievement-desc">Multi-stage Docker & GitHub Actions optimization</span>
+									</div>
+									<div class="achievement-badge">
+										<span class="achievement-icon">🔄</span>
+										<span class="achievement-text">Multi-Stack Integration</span>
+										<span class="achievement-desc">Brand merger platform consolidation & mentoring</span>
+									</div>
+									<div class="achievement-badge">
+										<span class="achievement-icon">🎯</span>
+										<span class="achievement-text">EKS → ECS Migration</span>
+										<span class="achievement-desc">Infrastructure consolidation & cost optimization</span>
+									</div>
+									<div class="achievement-badge">
+										<span class="achievement-icon">🤖</span>
+										<span class="achievement-text">ONNX MLOps Template</span>
+										<span class="achievement-desc">Company-wide ML model deployment template with ONNX</span>
+									</div>
+								</div>
 
-								<h4>Sky Betting & Gaming / Flutter</h4>
-								<h5>DevOps Engineer May 2023 - Sept 2025</h5>
-								<ul>
-									<li>Configured and supported CI/CD pipelines across four tech stacks and brands, including Jenkins, GitHub Actions, and GOCD.</li>
-									<li>Acted as an enablement function for teams across the business, including support ticket handling on a weekly rota.</li>
-									<li>Worked on multiple ongoing EKS upgrades, including config and Helm chart changes.</li>
-									<li>Monitored and maintained Kubernetes clusters across multiple products.</li>
-									<li>Managed both automatic and manual scaling across product infrastructure.</li>
-									<li>Implemented and maintained Infrastructure as Code with Ansible, Chef, and Terraform.</li>
-									<li>Managed product networking through Akamai, Cloudflare, and on-prem networking.</li>
-									<li>Streamlined processes and documented guidance to help teams self-serve.</li>
-									<li>Covered two on-call rotas.</li>
-								</ul>
+								<h3>Experience</h3>
+								<div class="employment-grid">
+									<div class="employment-card company-tfc">
+									<div class="company-header">
+										<div class="company-name">Twenty First Group</div>
+										<div class="date-range">Oct 2025 - Present</div>
+									</div>
+									<div class="position-title">Product Infrastructure Engineer</div>
+									<ul class="position-details">
+										<li>Configure and support CI/CD pipelines across multiple repos</li>
+										<li>Migrated main products from EKS to ECS, improving operational efficiency</li>
+										<li>Implemented template repos for faster Python and R project startup</li>
+										<li>Created ONNX MLOps deployment template for ML model deployment across the company</li>
+										<li>Multi-language support: <span class="skill-tag">Python</span> <span class="skill-tag">R</span> <span class="skill-tag">Java</span></li>
+										<li>On-call rotation coverage (bi-weekly)</li>
+									</ul>
+									</div>
 
-								<h5>DevOps Engineer Secondment Jan 2023 - May 2023</h5>
-								<ul>
-									<li>Seconded one or two days per week into a DevOps squad, delivering smaller tickets through self-learning and mentorship from other squad members.</li>
-								</ul>
+									<div class="employment-card company-sbg">
+									<div class="company-header">
+										<div class="company-name">Sky Betting & Gaming / Flutter</div>
+										<div class="date-range">May 2023 - Sept 2025</div>
+									</div>
+									<div class="position-title">DevOps Engineer</div>
+									<ul class="position-details">
+										<li>Managed CI/CD pipelines across four tech stacks: <span class="skill-tag">Jenkins</span> <span class="skill-tag">GitHub Actions</span> <span class="skill-tag">GOCD</span></li>
+										<li>Enablement function for teams with weekly support rotation</li>
+										<li>EKS cluster management with Helm chart updates and config changes</li>
+										<li>Infrastructure as Code: <span class="skill-tag">Ansible</span> <span class="skill-tag">Chef</span> <span class="skill-tag">Terraform</span></li>
+										<li>Network management: <span class="skill-tag">Akamai</span> <span class="skill-tag">Cloudflare</span> <span class="skill-tag">On-prem</span></li>
+										<li>Dual on-call rotations with operational oversight</li>
+									</ul>
+									</div>
 
-								<h5>Martech SysAdmin March 2021 - May 2023</h5>
-								<ul>
-									<li>Managed administration and configuration of advertising and marketing systems, including tag management, audience selection, fulfilment tools (SMS and email), and digital marketing platforms.</li>
-									<li>Ensured system integrity and compliance through access management, GDPR security settings, and process documentation, while identifying improvements.</li>
-									<li>Provided technical support, resolving user issues, handling alerts, facilitating dashboard and BI data flows, and assisting with upgrades and troubleshooting.</li>
-									<li>Acted as lead engineer during a six-month vacancy and represented the MarTech domain to stakeholders across the organisation.</li>
-								</ul>
+									<div class="employment-card company-sbg">
+									<div class="company-header">
+										<div class="company-name">Sky Betting & Gaming / Flutter</div>
+										<div class="date-range">Jan 2023 - May 2023</div>
+									</div>
+									<div class="position-title">DevOps Engineer (Secondment)</div>
+									<ul class="position-details">
+										<li>Delivered tickets in DevOps squad with mentorship from senior engineers</li>
+										<li>1-2 days per week focused technical learning and skill development</li>
+									</ul>
+									</div>
 
-								<h4>StepChange Debt Charity</h4>
-								<h5>Service Desk Team Lead March 2019 - March 2021</h5>
-								<ul>
-									<li>Led critical IT projects and deployments, including remote mass software updates, Office 365 rollout, Papercut implementation, and IT office infrastructure upgrades.</li>
-									<li>Provided senior-level technical support as the key escalation point between service desk and infrastructure teams, including 2nd/3rd line support and team training.</li>
-									<li>Drove operational excellence through new technologies and working practices, managing change, incidents, and problems in line with ITIL standards.</li>
-									<li>Recognised for high performance and leadership through consistently strong KPI performance, resulting in two over-achieving appraisals and promotion to Team Lead.</li>
-									<li>Supported in-hours and out-of-hours on-call operations, including weekend IT operations and site visits.</li>
-								</ul>
-								
-								<h5>Service Support Engineer October 2016 - March 2019</h5>
-								<ul>
-									<li>General 2nd line service desk and technical support tasks, including software/hardware troubleshooting, account unlocks, and AD/GPO management.</li>
-								</ul>
-								
-								<h4>Three non IT roles (most present first)</h4>
-								<ul>
-									<li>Correspondence Advisor (StepChange), Recruitment Consultant (Manpower), Bar Staff (Tiger 10/Parish), September 2012 to October 2016.</li>
-								</ul>
-								
+									<div class="employment-card company-sbg">
+									<div class="company-header">
+										<div class="company-name">Sky Betting & Gaming</div>
+										<div class="date-range">March 2021 - May 2023</div>
+									</div>
+									<div class="position-title">MarTech SysAdmin</div>
+									<ul class="position-details">
+										<li>Administration of marketing tech stack: tag management, audience tools, SMS/Email fulfillment</li>
+										<li>System compliance and security: <span class="skill-tag">GDPR</span> <span class="skill-tag">Access Mgmt</span></li>
+										<li>Led team for 6 months during vacancy, stakeholder representation</li>
+										<li>Dashboard implementation and BI data flow facilitation</li>
+									</ul>
+									</div>
+
+									<div class="employment-card company-stepchange">
+									<div class="company-header">
+										<div class="company-name">StepChange Debt Charity</div>
+										<div class="date-range">March 2019 - March 2021</div>
+									</div>
+									<div class="position-title">Service Desk Team Lead</div>
+									<ul class="position-details">
+										<li>Led critical IT projects: Office 365 rollout, Papercut implementation, mass software updates</li>
+										<li>2nd/3rd line escalation point with team mentoring responsibility</li>
+										<li>Operational excellence through <span class="skill-tag">ITIL</span> change management</li>
+										<li>Recognition: two over-achieving appraisals, promotion from Service Support Engineer</li>
+										<li>On-call operations including weekends and site visits</li>
+									</ul>
+									</div>
+
+									<div class="employment-card company-stepchange">
+									<div class="company-header">
+										<div class="company-name">StepChange Debt Charity</div>
+										<div class="date-range">Oct 2016 - March 2019</div>
+									</div>
+									<div class="position-title">Service Support Engineer</div>
+									<ul class="position-details">
+										<li>2nd line service desk and hardware/software troubleshooting</li>
+										<li>Active Directory & GPO management, account administration</li>
+									</ul>
+									</div>
+
+									<div class="employment-card company-other">
+									<div class="company-header">
+										<div class="company-name">Various Roles</div>
+										<div class="date-range">2012 - 2016</div>
+									</div>
+									<div class="position-title">Pre-IT Career</div>
+									<ul class="position-details">
+										<li>Correspondence Advisor (StepChange)</li>
+										<li>Recruitment Consultant (Manpower)</li>
+										<li>Bar Staff (Tiger 10 / Parish)</li>
+									</ul>
+									</div>
+								</div>
+
+								<!-- Education -->
 								<h3>Education</h3>
-								<h4>York St John University 2012-2015</h4>
-								<ul>
-									<li>BA (Hons) Physical Education and Sports Coaching.</li>
-								</ul>
-
-								<h4>Hanson School & Sixth form</h4>
-								<ul>
-									<li>BTEC Sport National Extended Diploma - Triple Distinction*</li>
-									<li>Five GCSEs A-C including Maths and English.</li>
-								</ul>
+								<div class="education-grid">
+									<div class="education-card">
+										<div class="education-level">🎓 University</div>
+										<div class="education-school">York St John University</div>
+										<div class="education-date">2012 - 2015</div>
+										<div class="education-detail">BA (Hons) Physical Education & Sports Coaching</div>
+									</div>
+									<div class="education-card">
+										<div class="education-level">📚 Secondary</div>
+										<div class="education-school">Hanson School & Sixth Form</div>
+										<div class="education-date">2010 - 2012 (Sixth Form)</div>
+										<div class="education-detail">BTEC Sport - Triple Distinction*</div>
+										<div class="education-detail">5 GCSEs A-C (incl. Maths & English)</div>
+									</div>
+								</div>
 							</article>
 
-						<!-- Build -->
+						<!-- Skills -->
+							<article id="skills">
+								<h2 class="major">Skills & Technologies</h2>
+								<p>A comprehensive view of my technical expertise across cloud, infrastructure, and DevOps domains.</p>
+								
+								<div class="skills-container">
+									<div class="skill-category">
+										<h3>Cloud Platforms</h3>
+										<div class="skill-grid">
+											<div class="skill-item" data-proficiency="expert">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=aws" alt="AWS icon" loading="lazy" />
+												<span class="skill-name">AWS</span>
+											</div>
+											<div class="skill-item" data-proficiency="advanced">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=kubernetes" alt="Kubernetes icon" loading="lazy" />
+												<span class="skill-name">ECS/EKS</span>
+											</div>
+											<div class="skill-item" data-proficiency="advanced">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=cloudflare" alt="Cloudflare icon" loading="lazy" />
+												<span class="skill-name">S3/CloudFront</span>
+											</div>
+											<div class="skill-item" data-proficiency="advanced">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=aws" alt="AWS Lambda icon" loading="lazy" />
+												<span class="skill-name">Lambda</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="skill-category">
+										<h3>Infrastructure as Code</h3>
+										<div class="skill-grid">
+											<div class="skill-item" data-proficiency="expert">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=terraform" alt="Terraform icon" loading="lazy" />
+												<span class="skill-name">Terraform</span>
+											</div>
+											<div class="skill-item" data-proficiency="advanced">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=linux" alt="Chef icon" loading="lazy" />
+												<span class="skill-name">Chef</span>
+											</div>
+											<div class="skill-item" data-proficiency="advanced">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=ansible" alt="Ansible icon" loading="lazy" />
+												<span class="skill-name">Ansible</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="skill-category">
+										<h3>CI/CD & Automation</h3>
+										<div class="skill-grid">
+											<div class="skill-item" data-proficiency="expert">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=githubactions" alt="GitHub Actions icon" loading="lazy" />
+												<span class="skill-name">GitHub Actions</span>
+											</div>
+											<div class="skill-item" data-proficiency="advanced">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=jenkins" alt="Jenkins icon" loading="lazy" />
+												<span class="skill-name">Jenkins</span>
+											</div>
+											<div class="skill-item" data-proficiency="advanced">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=docker" alt="Docker icon" loading="lazy" />
+												<span class="skill-name">Docker</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="skill-category">
+										<h3>Observability</h3>
+										<div class="skill-grid">
+											<div class="skill-item" data-proficiency="advanced">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=prometheus" alt="Prometheus icon" loading="lazy" />
+												<span class="skill-name">Prometheus</span>
+											</div>
+											<div class="skill-item" data-proficiency="advanced">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=grafana" alt="Grafana icon" loading="lazy" />
+												<span class="skill-name">Grafana</span>
+											</div>
+											<div class="skill-item" data-proficiency="intermediate">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=aws" alt="CloudWatch icon" loading="lazy" />
+												<span class="skill-name">CloudWatch</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="skill-category">
+										<h3>Scripting Languages</h3>
+										<div class="skill-grid">
+											<div class="skill-item" data-proficiency="advanced">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=bash" alt="Bash icon" loading="lazy" />
+												<span class="skill-name">Bash</span>
+											</div>
+											<div class="skill-item" data-proficiency="advanced">
+												<img class="skill-icon-img" src="https://skillicons.dev/icons?i=py" alt="Python icon" loading="lazy" />
+												<span class="skill-name">Python</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
 							<article id="build">
 								<h2 class="major">Build</h2>
 								<p>To build the site i used a premade HTML/CSS site, then just amended bits of the HTML to suit what i wanted it to look like.</p>
@@ -178,17 +430,119 @@
 
 							</article>
 
+						<!-- Architecture -->
+							<article id="architecture">
+								<h2 class="major">Architecture & Tech Stack</h2>
+								
+								<h3>Site Architecture Overview</h3>
+								<p>This personal website demonstrates modern DevOps practices with a secure, scalable architecture.</p>
+								<span class="image main"><img src="images/personal-website.drawio.drawio.png" alt="Current site architecture diagram" /></span>
+
+								<h3>Infrastructure Components</h3>
+								<div class="tech-stack">
+									<div class="stack-layer">
+										<h4>Frontend Delivery</h4>
+										<div class="tech-items">
+											<div class="tech-item animate-on-scroll" data-layer="1">
+												<span class="tech-icon">☁️</span>
+												<span class="tech-name">CloudFront CDN</span>
+											</div>
+											<div class="tech-item animate-on-scroll" data-layer="1">
+												<span class="tech-icon">🔐</span>
+												<span class="tech-name">Cloudflare DDoS/WAF</span>
+											</div>
+											<div class="tech-item animate-on-scroll" data-layer="1">
+												<span class="tech-icon">🔒</span>
+												<span class="tech-name">ACM Certificates</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="stack-layer">
+										<h4>Storage & Hosting</h4>
+										<div class="tech-items">
+											<div class="tech-item animate-on-scroll" data-layer="2">
+												<span class="tech-icon">📦</span>
+												<span class="tech-name">AWS S3</span>
+											</div>
+											<div class="tech-item animate-on-scroll" data-layer="2">
+												<span class="tech-icon">🌍</span>
+												<span class="tech-name">Route 53</span>
+											</div>
+											<div class="tech-item animate-on-scroll" data-layer="2">
+												<span class="tech-icon">🗂️</span>
+												<span class="tech-name">AWS Infrastructure</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="stack-layer">
+										<h4>Infrastructure as Code</h4>
+										<div class="tech-items">
+											<div class="tech-item animate-on-scroll" data-layer="3">
+												<span class="tech-icon">📐</span>
+												<span class="tech-name">Terraform</span>
+											</div>
+											<div class="tech-item animate-on-scroll" data-layer="3">
+												<span class="tech-icon">⚙️</span>
+												<span class="tech-name">Infrastructure State Mgmt</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="stack-layer">
+										<h4>CI/CD Pipeline</h4>
+										<div class="tech-items">
+											<div class="tech-item animate-on-scroll" data-layer="4">
+												<span class="tech-icon">🔄</span>
+												<span class="tech-name">GitHub Actions</span>
+											</div>
+											<div class="tech-item animate-on-scroll" data-layer="4">
+												<span class="tech-icon">🐙</span>
+												<span class="tech-name">Git & GitHub</span>
+											</div>
+											<div class="tech-item animate-on-scroll" data-layer="4">
+												<span class="tech-icon">📝</span>
+												<span class="tech-name">Automated Testing</span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<h3>Deployment Flow</h3>
+								<p>On every push to the personal-site folder:</p>
+								<ol>
+									<li><strong>Code Commit:</strong> Changes pushed to GitHub repository</li>
+									<li><strong>GitHub Actions:</strong> Workflow detected file changes in personal-site/</li>
+									<li><strong>Build & Validate:</strong> Code is built and validated</li>
+									<li><strong>Terraform Deploy:</strong> Infrastructure provisioned/updated automatically</li>
+									<li><strong>Content Upload:</strong> Site files synced to S3 bucket</li>
+									<li><strong>Cache Invalidation:</strong> CloudFront cache cleared for instant updates</li>
+									<li><strong>Live:</strong> Changes available globally within seconds</li>
+								</ol>
+
+								<p>To learn more about this tech stack and design choices, check out the <a href="https://github.com/stejackson94/static-site">GitHub repository</a>.</p>
+							</article>
+
 						<!-- Socials -->
 						<article id="social">
 							<h2 class="major">Socials</h2>
-							<span class="image main"><img src="images/pic04.png" alt="Social media illustration" /></span>
-							<p>Here are the links to my LinkedIn and my GitHub profile.</p>
-							<p>Inside my GitHub you can expect to find repos for my Homelab and the static site mono repo that contains both the code for my wedding website and this one.</p>
-							<p>Over time i will add more too, who knows what projects i'll push up!</p>
-							<ul class="icons">
-								<li><a href="https://www.linkedin.com/in/stephenjackson1994/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://github.com/stejackson94" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							</ul>
+							<p class="social-intro">Connect with me professionally on LinkedIn, or explore the projects and infrastructure work I am building on GitHub.</p>
+							<div class="social-grid">
+								<a href="https://www.linkedin.com/in/stephenjackson1994/" class="social-card" target="_blank" rel="noopener noreferrer">
+									<span class="social-icon icon brands fa-linkedin" aria-hidden="true"></span>
+									<span class="social-title">LinkedIn</span>
+									<span class="social-copy">Career updates, experience, and professional network.</span>
+									<span class="social-cta">Visit profile</span>
+								</a>
+								<a href="https://github.com/stejackson94" class="social-card" target="_blank" rel="noopener noreferrer">
+									<span class="social-icon icon brands fa-github" aria-hidden="true"></span>
+									<span class="social-title">GitHub</span>
+									<span class="social-copy">Homelab work, static site repos, and ongoing experiments.</span>
+									<span class="social-cta">View repositories</span>
+								</a>
+							</div>
+							<p class="social-note">More projects will keep appearing here as I build and share them.</p>
 						</article>
 
 						<!-- Elements -->

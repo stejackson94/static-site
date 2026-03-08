@@ -385,6 +385,73 @@
 
 			}
 
+	// Smooth scroll animations.
+		var animateOnScroll = function() {
+			var elements = document.querySelectorAll('.animate-on-scroll');
+			
+			elements.forEach(function(element) {
+				var elementTop = element.getBoundingClientRect().top;
+				var elementBottom = element.getBoundingClientRect().bottom;
+				var isVisible = (elementTop < window.innerHeight) && (elementBottom > 0);
+				
+				if (isVisible) {
+					element.classList.add('in-view');
+				}
+			});
+		};
+		
+		// Run on page load
+		animateOnScroll();
+		
+		// Run on scroll
+		$window.on('scroll', function() {
+			animateOnScroll();
+		});
+
+	// Animated stat counters
+		var counterStarted = false;
+		var animateCounters = function() {
+			var statNumbers = document.querySelectorAll('.stat-number');
+			
+			statNumbers.forEach(function(element) {
+				if (element.dataset.target && !element.dataset.animated) {
+					var target = parseInt(element.dataset.target);
+					var current = 0;
+					var increment = target / 30; // Animate over ~30 frames
+					var interval = 50; // ms between frames
+					
+					element.dataset.animated = 'true';
+					
+					var timer = setInterval(function() {
+						current += increment;
+						if (current >= target) {
+							element.textContent = target;
+							clearInterval(timer);
+						} else {
+							element.textContent = Math.floor(current);
+						}
+					}, interval);
+				}
+			});
+		};
+		
+		// Start counters when page loads
+		$window.on('load', function() {
+			window.setTimeout(function() {
+				animateCounters();
+			}, 1200); // Start after staggered animations complete
+		});
+
+	// Scroll indicator click handler
+		var $scrollIndicator = $('.scroll-indicator');
+		$scrollIndicator.on('click', function(e) {
+			e.preventDefault();
+			var $firstArticle = $main_articles.first();
+			if ($firstArticle.length > 0) {
+				$main._show($firstArticle.attr('id'));
+			}
+		});
+
 		// Initialize.
 
 			// Hide main, articles.
