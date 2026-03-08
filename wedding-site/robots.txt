@@ -1,0 +1,6 @@
+# Wedding website - allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://hollyandste.wedding/sitemap.xml

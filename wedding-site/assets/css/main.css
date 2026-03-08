@@ -8,6 +8,10 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/* =================================================================
+   CSS Reset - Normalize default browser styles
+   ================================================================= */
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -108,7 +112,10 @@ input, select, textarea {
 			transition: none !important;
 		}
 
-/* Spinner */
+/* =================================================================
+   Spinner - Loading animation that rotates continuously
+   Used during initial page load to provide visual feedback
+   ================================================================= */
 
 	@-moz-keyframes spinner-rotate {
 		0% {
@@ -174,7 +181,10 @@ input, select, textarea {
 		}
 	}
 
-/* Loader */
+/* =================================================================
+   Loader - Page loader with fade-in/fade-out animations
+   Controls the visibility and transition of the loading spinner
+   ================================================================= */
 
 	@-moz-keyframes spinner-show {
 		0% {
@@ -509,6 +519,12 @@ input, select, textarea {
 		letter-spacing: 0.025em;
 	}
 
+		/* =================================================================
+		   Responsive Typography
+		   Breakpoints: 1920px, 1680px, 1280px, 1000px, 736px, 480px
+		   Font sizes scale down progressively for smaller screens
+		   ================================================================= */
+
 		@media screen and (max-width: 1920px) {
 
 			body, input, textarea, select {
@@ -772,6 +788,11 @@ input, select, textarea {
 			button.style2.down {
 				background-image: url("images/arrow.svg");
 			}
+
+/* =================================================================
+   Form - Custom form field styling
+   Styles for RSVP form inputs, textareas, and validation states
+   ================================================================= */
 
 /* Form */
 
@@ -1236,6 +1257,11 @@ input, select, textarea {
 			table.default tfoot {
 				background: #e5e6e7;
 			}
+
+/* =================================================================
+   Poptrox - Lightbox/modal gallery plugin styling
+   Handles image popups and overlay presentation
+   ================================================================= */
 
 /* Poptrox */
 
@@ -1834,6 +1860,11 @@ input, select, textarea {
 
 		}
 
+/* =================================================================
+   Header - Fixed navigation header with smooth scroll links
+   Sticky navigation bar that stays visible across all sections
+   ================================================================= */
+
 /* Header */
 
 	#header {
@@ -1926,6 +1957,11 @@ input, select, textarea {
 			}
 
 		}
+
+/* =================================================================
+   Main - Core section styling and fullscreen layout
+   Contains styles for all content sections with parallax backgrounds
+   ================================================================= */
 
 /* Main */
 
@@ -2253,6 +2289,12 @@ input, select, textarea {
 
 		}
 
+/* =================================================================
+   Intro Section - Home/Landing
+   Hero section with main background image and couples' names
+   Parallax effect on background for visual depth
+   ================================================================= */
+
 /* Intro */
 
 	#intro {
@@ -2263,6 +2305,11 @@ input, select, textarea {
 		background-repeat: repeat, no-repeat;
 	}
 
+/* =================================================================
+   Section One - Venue
+   Parallax background with venue information
+   ================================================================= */
+
 /* One */
 
 	#one {
@@ -2271,6 +2318,11 @@ input, select, textarea {
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
 	}
+
+/* =================================================================
+   Section Two - On The Day
+   Timeline and schedule information with parallax background
+   ================================================================= */
 
 /* Two */
 
@@ -2281,6 +2333,11 @@ input, select, textarea {
 		background-position: top left, center center;
 	}
 
+/* =================================================================
+   Section Three - Drinks
+   Beverage information and bar details
+   ================================================================= */
+
 /* Three */
 
 #three {
@@ -2289,6 +2346,11 @@ input, select, textarea {
 	background-attachment: fixed, fixed;
 	background-position: top left, center center;
 }
+
+/* =================================================================
+   Section Four - Accommodation
+   Hotel recommendations for wedding guests
+   ================================================================= */
 
 /* Four */
 
@@ -2299,6 +2361,11 @@ input, select, textarea {
 	background-position: top left, center center;
 }
 
+/* =================================================================
+   Section Five - Restaurants
+   Dining recommendations in the local area
+   ================================================================= */
+
 /* Five */
 
 #five {
@@ -2307,6 +2374,11 @@ input, select, textarea {
 	background-attachment: fixed, fixed;
 	background-position: top left, center center;
 }
+
+/* =================================================================
+   Section Six - Useful Info
+   Travel tips and practical information for guests
+   ================================================================= */
 
 /* Six */
 
@@ -2317,6 +2389,11 @@ input, select, textarea {
 	background-position: top left, center center;
 }
 
+
+/* =================================================================
+   Contact Section - RSVP Form
+   Animated form container with slide-up transition effect
+   ================================================================= */
 
 /* Contact */
 
