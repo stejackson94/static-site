@@ -2355,11 +2355,18 @@ input, select, textarea {
 /* Four */
 
 #four {
-	background: url("images/overlay.png"), url("../../images/four.jpg");
+	background: url("images/overlay.png"), url("../../images/four.png");
 	background-size: 256px 256px, cover;
 	background-attachment: fixed, fixed;
 	background-position: top left, center center;
 }
+
+	#four.main.style2 {
+		-moz-align-items: flex-end;
+		-webkit-align-items: flex-end;
+		-ms-align-items: flex-end;
+		align-items: flex-end;
+	}
 
 /* =================================================================
    Section Five - Accommodation
