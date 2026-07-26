@@ -2009,6 +2009,12 @@ input, select, textarea {
 				font-family: "Alex Brush", cursive;
 			}
 
+			.main.style1 h1 {
+				font-size: 3em;
+				line-height: 1.1em;
+				margin: 0.4em 0 0 0;
+			}
+
 			.main.style1 > .content {
 				-moz-transition: opacity 1s ease;
 				-webkit-transition: opacity 1s ease;
