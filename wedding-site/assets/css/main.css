@@ -513,8 +513,8 @@ input, select, textarea {
 	body, input, textarea, select {
 		font-family: "Source Sans Pro", "sans-serif";
 		font-weight: 300;
-		font-size: 18pt;
-		line-height: 1.75em;
+		font-size: 18px;
+		line-height: 1.7em;
 		color: #39454b;
 		letter-spacing: 0.025em;
 	}
@@ -522,21 +522,18 @@ input, select, textarea {
 		/* =================================================================
 		   Responsive Typography
 		   Breakpoints: 1920px, 1680px, 1280px, 1000px, 736px, 480px
-		   Font sizes scale down progressively for smaller screens
+		   Keep the same base font size on all viewport widths
 		   ================================================================= */
 
 		@media screen and (max-width: 1920px) {
 
 			body, input, textarea, select {
-				font-size: 17pt;
-			}
-
-		}
-
-		@media screen and (max-width: 1680px) {
+				font-size: 18px;
+				line-height: 1.7em;
 
 			body, input, textarea, select {
-				font-size: 15pt;
+				font-size: 16px;
+				line-height: 1.6em;
 			}
 
 		}
@@ -544,7 +541,8 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			body, input, textarea, select {
-				font-size: 13pt;
+				font-size: 16px;
+				line-height: 1.6em;
 			}
 
 		}
@@ -552,7 +550,8 @@ input, select, textarea {
 		@media screen and (max-width: 1000px) {
 
 			body, input, textarea, select {
-				font-size: 13pt;
+				font-size: 16px;
+				line-height: 1.6em;
 			}
 
 		}
@@ -560,8 +559,8 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			body, input, textarea, select {
-				font-size: 12pt;
-				line-height: 1.5em;
+				font-size: 16px;
+				line-height: 1.6em;
 			}
 
 		}
@@ -586,7 +585,7 @@ input, select, textarea {
 	@media screen and (max-width: 736px) {
 
 		h2 {
-			font-size: 1.5em;
+			font-size: 1.8em;
 		}
 
 	}
@@ -2006,11 +2005,12 @@ input, select, textarea {
 				font-size: 6.5em;
 				line-height: 1em;
 				text-transform: capitalize;
-				font-family: "Alex Brush", cursive;
+				font-family: "Source Sans Pro", "sans-serif";
 			}
 
 			.main.style1 h1 {
-				font-size: 3em;
+				font-family: "Source Sans Pro", "sans-serif";
+				font-size: 2.5em;
 				line-height: 1.1em;
 				margin: 0.4em 0 0 0;
 			}
@@ -2172,6 +2172,10 @@ input, select, textarea {
 
 				.main.style1 h2 {
 					font-size: 3em;
+				}
+
+				.main.style1 h1 {
+					font-size: 1.8em;
 				}
 
 			.main.style2 {
